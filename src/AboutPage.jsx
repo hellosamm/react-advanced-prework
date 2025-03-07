@@ -68,9 +68,12 @@ const AboutPage = () => {
 
       <p>{pageData.description}</p>
       <p>{pageData.temperament}</p>
-      <a href={pageData.url} target="blank">
-        learn more here
-      </a>
+
+      <div className="learnMore">
+        <a href={pageData.url || pageData.wikipedia_url} target="blank">
+          learn more here
+        </a>
+      </div>
     </div>
   );
 };

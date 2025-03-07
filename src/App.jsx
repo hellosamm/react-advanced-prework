@@ -8,6 +8,7 @@ function App() {
   const [data, setData] = useState([]);
   // const [currentCat, setCurrentCat] = useState("");
   const [currentImage, setCurrentImage] = useState(storedData?.url || null);
+  const [prevData, setPrevData] = useState([]);
   const api_key = import.meta.env.VITE_API_KEY;
   const navigate = useNavigate();
 
@@ -59,23 +60,17 @@ function App() {
   }, [currentImage]);
 
   const findNextCat = async () => {
+    setPrevData(storedData);
     fetchData(api_key);
   };
 
   return (
-    <>
+    <div className="mainArea">
       {/* <button onClick={fetchData}>test</button> */}
       {currentImage && (
         <img src={currentImage} alt="cat-image" height="500px" />
       )}
       <div className="navBar">
-        <button className="navArrow">
-          <img
-            src="/public/left-arrow.png"
-            alt="left-arrow"
-            style={{ width: "20px" }}
-          />
-        </button>
         {storedData ? (
           <button
             onClick={() => navigate(`/breeds/${storedData.breeds[0].id}`)}
@@ -86,17 +81,17 @@ function App() {
           <p>loading</p>
         )}
         {/* <button onClick={findNextCat}>--></button> */}
-        <button onClick={findNextCat} className="navArrow">
+        <div onClick={findNextCat} className="navArrow">
           <img
             src="/public/right-arrow.png"
             alt="right-arrow"
             style={{ width: "20px" }}
           />
-        </button>
+        </div>
       </div>
 
       <p>{data.image}</p>
-    </>
+    </div>
   );
 }
 
