@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import AboutPage from "./aboutPage";
 
 function App() {
+  const storedData = JSON.parse(localStorage.getItem("currentCatData")) || null;
   const [data, setData] = useState([]);
-  const [currentCat, setCurrentCat] = useState("");
-  const [currentImage, setCurrentImage] = useState(null);
+  // const [currentCat, setCurrentCat] = useState("");
+  const [currentImage, setCurrentImage] = useState(storedData?.url || null);
   const api_key = import.meta.env.VITE_API_KEY;
   const navigate = useNavigate();
 
@@ -28,14 +29,22 @@ function App() {
         console.log(result);
         const catData = result[0];
 
-        if (catData.breeds && catData.breeds[0]) {
-          setData(catData);
-          setCurrentCat(catData.id);
-          setCurrentImage(catData.url);
-          console.log("data", catData);
-        } else {
-          fetchData(api_key);
-        }
+        setData(catData);
+        setCurrentImage(catData.url);
+
+        localStorage.setItem("currentCatData", JSON.stringify(catData));
+
+        // if (catData.breeds && catData.breeds[0]) {
+        //   setData(catData);
+        //   setCurrentCat(catData.id);
+        //   // setCurrentImage(catData.url);
+        //   console.log("data", catData);
+        //   localStorage.setItem("currentCatData", catData);
+        //   // localStorage.setItem("currentCatId", catData.id);
+        //   // localStorage.setItem("currentCatImage", catData.url);
+        // } else {
+        //   fetchData(api_key);
+        // }
       }
     } catch (error) {
       console.error("network errror: ", error);
@@ -44,8 +53,10 @@ function App() {
   };
 
   useEffect(() => {
-    fetchData(api_key);
-  }, []);
+    if (!storedData) {
+      fetchData(api_key);
+    }
+  }, [currentImage]);
 
   const findNextCat = async () => {
     fetchData(api_key);
@@ -65,9 +76,11 @@ function App() {
             style={{ width: "20px" }}
           />
         </button>
-        {data.breeds && data.breeds[0] ? (
-          <button onClick={() => navigate(`/breeds/${data.breeds[0].id}`)}>
-            learn more about {data.breeds[0]?.name} cats
+        {storedData ? (
+          <button
+            onClick={() => navigate(`/breeds/${storedData.breeds[0].id}`)}
+          >
+            learn more about {storedData.breeds[0]?.name} cats
           </button>
         ) : (
           <p>loading</p>

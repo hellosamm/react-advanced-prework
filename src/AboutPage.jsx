@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import React from "react";
 
 const AboutPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const api_key = import.meta.env.VITE_API_KEY;
   const [catBreed, setCatBreed] = useState("");
@@ -53,7 +54,17 @@ const AboutPage = () => {
 
   return (
     <div className="aboutPage">
-      <h2>{pageData.name}</h2>
+      <div className="aboutHeader">
+        <img
+          src="/public/left-arrow.png"
+          alt="left-arrow"
+          style={{ width: "20px" }}
+          className="aboutBackArrow"
+          onClick={() => navigate(-1)}
+        />
+
+        <h2>{pageData.name}</h2>
+      </div>
 
       <p>{pageData.description}</p>
       <p>{pageData.temperament}</p>

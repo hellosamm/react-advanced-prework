@@ -55,3 +55,17 @@ a:hover {
   color: #ffac64;
   cursor: pointer;
 }
+
+.aboutHeader {
+  display: flex;
+  align-items: center;
+}
+
+.aboutBackArrow {
+  margin-right: 1rem;
+}
+
+.aboutBackArrow:hover {
+  cursor: pointer;
+  margin-right: 1rem;
+}
