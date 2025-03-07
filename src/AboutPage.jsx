@@ -53,7 +53,7 @@ const AboutPage = () => {
 
   return (
     <div className="aboutPage">
-      <h1>{pageData.name}</h1>
+      <h2>{pageData.name}</h2>
 
       <p>{pageData.description}</p>
       <p>{pageData.temperament}</p>
