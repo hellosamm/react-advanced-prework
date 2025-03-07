@@ -5,6 +5,7 @@ import React from "react";
 
 const AboutPage = () => {
   const { id } = useParams();
+
   const api_key = import.meta.env.VITE_API_KEY;
   const [catBreed, setCatBreed] = useState("");
   const [pageData, setPageData] = useState(null);
@@ -51,8 +52,9 @@ const AboutPage = () => {
   }
 
   return (
-    <div>
-      <h1>learn about the {pageData.name}</h1>
+    <div className="aboutPage">
+      <h1>{pageData.name}</h1>
+
       <p>{pageData.description}</p>
       <p>{pageData.temperament}</p>
       <a href={pageData.url} target="blank">

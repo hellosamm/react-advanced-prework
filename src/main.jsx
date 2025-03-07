@@ -6,6 +6,5 @@ import AppRoutes from "./routes";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AppRoutes />
-    <p>@samm.bakerr 2025</p>
   </StrictMode>
 );

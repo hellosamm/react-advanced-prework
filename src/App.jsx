@@ -57,7 +57,14 @@ function App() {
       {currentImage && (
         <img src={currentImage} alt="cat-image" height="500px" />
       )}
-      <div>
+      <div className="navBar">
+        <button className="navArrow">
+          <img
+            src="/public/left-arrow.png"
+            alt="left-arrow"
+            style={{ width: "20px" }}
+          />
+        </button>
         {data.breeds && data.breeds[0] ? (
           <button onClick={() => navigate(`/breeds/${data.breeds[0].id}`)}>
             learn more about {data.breeds[0]?.name} cats
@@ -65,7 +72,14 @@ function App() {
         ) : (
           <p>loading</p>
         )}
-        <button onClick={findNextCat}>--></button>
+        {/* <button onClick={findNextCat}>--></button> */}
+        <button onClick={findNextCat} className="navArrow">
+          <img
+            src="/public/right-arrow.png"
+            alt="right-arrow"
+            style={{ width: "20px" }}
+          />
+        </button>
       </div>
 
       <p>{data.image}</p>
