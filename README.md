@@ -86,7 +86,7 @@ Click the "Next" arrow to fetch a new cat.
 ├── AboutPage.jsx    # About page displaying cat information\
 ├── index.css        # Styling for the application\
 ├── .env             # Environment file for storing API key\
-├── README.md        # Project documentation\
+├── README.md        # Project documentation
 
 ## API Reference
 
