@@ -8,7 +8,7 @@ Displays a random cat image fetched from TheCatAPI.
 
 Provides a "Learn More" button that takes users to a details page with breed information.
 
-The details page includes the breed name, a description, and tempermant 
+The details page includes the breed name, a description, and temperament 
 
 A "Back" button allows users to return to the main page, where the last viewed cat remains visible until a new cat is fetched.
 
