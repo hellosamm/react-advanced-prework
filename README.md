@@ -28,15 +28,9 @@ Vite: Development environment for handling API keys securely
 
 ### Prerequisites
 
-Ensure you have Node.js installed
-
-Install Vite globally by running:
-
-```
-npm create vite@latest my-cat-app --template vanilla
-cd my-cat-app
-npm install
-```
+Ensure you have the following installed: 
+Node.js (```node -v```)
+npm (```npm -v```)
 
 Sign up at TheCatAPI and obtain an API key.
 
@@ -65,6 +59,11 @@ VITE_API_KEY=your_api_key_here
 
 ```
 npm run dev
+```
+
+5. Navigate to 
+```
+Local:   http://localhost:5173/
 ```
 
 ## Usage
