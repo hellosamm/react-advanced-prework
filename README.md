@@ -108,7 +108,3 @@ Improve navigation performance and allow users to move forward and backwards thr
 Enhance styling for better user experience.
 
 Implement a search feature to look up specific breeds.
-
-License
-
-This project is licensed under the MIT License.
