@@ -75,9 +75,9 @@ View a randomly displayed cat image.
 
 Click the "Learn More" button to see details about the cat breed.
 
-Use the "Back" button to return to the main page.
+Use the "Back" arrow to return to the main page.
 
-Click the "Next Arrow" to fetch a new cat.
+Click the "Next" arrow to fetch a new cat.
 
 
 ## File Structure
