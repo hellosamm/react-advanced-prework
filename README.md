@@ -82,11 +82,11 @@ Click the "Next Arrow" to fetch a new cat.
 
 ## File Structure
 
-├── App.jsx          # Main page displaying cat image/
-├── AboutPage.jsx    # About page displaying cat information/
-├── index.css        # Styling for the application/
-├── .env             # Environment file for storing API key/
-├── README.md        # Project documentation/
+├── App.jsx          # Main page displaying cat image\
+├── AboutPage.jsx    # About page displaying cat information\
+├── index.css        # Styling for the application\
+├── .env             # Environment file for storing API key\
+├── README.md        # Project documentation\
 
 ## API Reference
 
